@@ -7,15 +7,19 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/portfolio', (req, res) => {
-  res.render('portfolio', {title: 'Portfolio'})
+  res.render('portfolio', {title: 'Projects'})
 });
 
 router.get('/about', (req, res) => {
-  res.render('about', {title: 'About'})
+  res.render('about', {title: 'About Me'})
 });
 
 router.get('/blog', (req, res) => {
-  res.render('blog', {title: 'Blog'})
+  res.render('blog', {title: 'My Notes'})
+});
+
+router.get('/contact', (req, res) => {
+  res.render('contact', {title: 'Contact Me'})
 });
 
 
