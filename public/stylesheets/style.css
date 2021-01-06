@@ -6,14 +6,16 @@
   --green-sheen: #73BFB8;
   --mikado-yellow: #FEC601;
   --black: #272727;
+  --box-size: 250px;
+  --sans-font-stack: Rubik, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  --headline-font-stack: Pacifico, 'Playfair Display', 'Krona One', 'Merriweather Sans', serif;
 }
 
 html {
   /* border-box box model allows us to add padding and border to our elements without increasing their size */
   box-sizing: border-box;
   /* A system font stack so things load nice and quick! */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: var(--sans-font-stack);
   font-weight: 900;
   font-size: 10px;
   color: var(--black);
@@ -78,12 +80,12 @@ nav ul li a {
 .item {
   /* We center the contents of these items. You can also do this with flexbox too! */
   display: grid;
-  justify-content: center;
-  align-items: center;
-  border: 5px solid rgba(0, 0, 0, 0.03);
+  justify-content: flex-start;
+  align-items: flex-start;
   border-radius: 3px;
   font-size: 35px;
   background-color: var(--carolina-blue); /* best colour */
+  max-width: var(--box-size);
 }
 
 .item p {
@@ -91,28 +93,59 @@ nav ul li a {
 }
 
 .about-content {
-  padding: 5rem 8rem 0 8rem;
+  /* padding: 5rem 8rem 0 8rem; */
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: auto repeat(2, var(--box-size)) auto;
+  grid-template-rows: 25% var(--box-size) var(--box-size);
   gap: 20px 20px;
-  align-items: center;
+  align-items: normal;
 }
 
 .about-content h1 {
-  font-size: 200%;
+  font-size: 4rem;
+  text-align: center;
+  font-family: var(--headline-font-stack);
 }
 
 .about-content .title {
-  grid-column: span 2;
+  grid-column: span 4;
+  display: grid;
+  padding: 4rem 0 0 0;
 }
 
-/* .about-content .item1 {
+.about-content .item1 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  height: var(--box-size);
+  max-width: var(--box-size);
+  overflow-wrap: break-word;
+  font-size: 6rem;
+}
 
-} */
+.about-content .item2 {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  height: var(--box-size);
+}
 
-.about-content .item4 img {
-  /* object-fit: cover; */
+.about-content .item3 {
+  grid-row-start: 2;
+  grid-row-start: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  height: var(--box-size);
+}
+
+.about-content .item4 {
+  grid-row-start: 2;
+  grid-row-start: 3;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  height: var(--box-size);
+}
+
+/* .about-content .item4 img {
+  object-fit: cover; 
   width: 75%;
   height: auto;
-}
+} */
