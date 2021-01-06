@@ -80,8 +80,8 @@ nav ul li a {
 .item {
   /* We center the contents of these items. You can also do this with flexbox too! */
   display: grid;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: flex-end;
+  align-items: center;
   border-radius: 3px;
   font-size: 35px;
   background-color: var(--carolina-blue); /* best colour */
@@ -117,15 +117,26 @@ nav ul li a {
   grid-column-start: 2;
   grid-column-end: 3;
   height: var(--box-size);
-  max-width: var(--box-size);
-  overflow-wrap: break-word;
-  font-size: 6rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.dev-letter {
+  text-align: center;
+  font-size: 7rem;
 }
 
 .about-content .item2 {
   grid-column-start: 3;
   grid-column-end: 4;
   height: var(--box-size);
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.growth-letter {
+  text-align: center;
+  font-size: 9rem;
 }
 
 .about-content .item3 {
@@ -134,6 +145,8 @@ nav ul li a {
   grid-column-start: 2;
   grid-column-end: 3;
   height: var(--box-size);
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .about-content .item4 {
