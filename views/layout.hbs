@@ -2,20 +2,17 @@
 <html>
   <head>
     <title>{{title}}</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <nav>
-      <h1>KH</h1>
-      <ul>
-        <li><a href="/about">About Me</a></li>
-        <li><a href="/portfolio">Projects</a></li>
-        <li><a href="/contact">Contact Me</a></li>
-        <li><a href="/blog">My Notes</a></li>
+    <nav class="navbar">
+      <ul class="navbar__list">
+        <li class="navbar__about"><a href="/about">About</a></li>
+        <li class="navbar__portfolio"><a href="/portfolio">Portfolio</a></li>
+        <li class="navbar__blog"><a href="/blog">Blog</a></li>
       </ul>
+      <div class="vertical-bar__short"></div>
+      <div class="vertical-bar__long"></div>
     </nav>
     {{{body}}}
   </body>
