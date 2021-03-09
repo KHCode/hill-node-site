@@ -4,7 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const hbs = require('express-handlebars');
-const getDetails = require('./public/javascripts/frontEndHelpers');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -15,7 +15,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', hbs({defaultLayout: 'main', extname: '.hbs'}));
 app.set('view engine', 'hbs');
-hbs.registerHelper('get_details', getDetails);
+// hbs.registerHelper('get_details', getDetails);
 
 app.use(logger('dev'));
 app.use(express.json());

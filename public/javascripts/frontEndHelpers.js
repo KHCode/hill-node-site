@@ -10,6 +10,4 @@ module.exports.getDetails = function () {
     body.classList.toggle('reveal');
     console.log(body);
   }
-
-  return card.onclick;
 }

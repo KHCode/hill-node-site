@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
+const getDetails = require('../public/javascripts/frontEndHelpers');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  res.render('home', { title: 'Home' });
+  res.render('home', { title: 'Home', get_details: () => getDetails});
 });
 
 router.get('/portfolio', (req, res) => {
