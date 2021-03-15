@@ -440,6 +440,7 @@ a{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
   position: relative;
@@ -479,15 +480,15 @@ a{
   padding: 1rem;
 }
 
-.github-logo:hover, .more-info:hover{
+.github-logo:hover, .more-info:hover, .body__close:hover{
   fill: #50a7f8;
   cursor: pointer;
 }
 
 .tools{
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
 }
 
 .tools-title{
@@ -500,6 +501,7 @@ a{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   list-style: none;
   font-size: 1.7rem;
   width: 100%;
@@ -534,6 +536,13 @@ a{
 
 .body__description{
   text-shadow: #aaaaaa -.1rem .1rem .2rem;
+}
+
+.body__close{
+  position: absolute;
+  fill: #353535;
+  bottom: 2rem;
+  right: 3rem;
 }
 
 .reveal{
