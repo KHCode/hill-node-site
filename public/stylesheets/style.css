@@ -37,7 +37,7 @@ a{
 
 /* HOME PAGE */
 
-.hero{
+.hero a{
   background: rgba(238, 238, 238, 0.4);
   display: flex;
   justify-content: center;
@@ -58,6 +58,7 @@ a{
 .hero__name{
   font-size: 7rem;
   margin-left: 2rem;
+  display: inline-block;
   animation: hover-shadow 3s ease-in-out infinite;
 }
 
@@ -101,6 +102,11 @@ a{
 
 /* NAVBAR */
 
+.navbar__toggle{
+  display: flex;
+  justify-content: flex-end;
+}
+
 .navbar{
   padding: 0 2rem;
   font-size: 5rem;
@@ -111,6 +117,10 @@ a{
   top: 0;
   right: 0;
   z-index: 2;
+}
+
+.navbar__hamburger{
+  display: none;
 }
 
 .navbar__list{
@@ -281,12 +291,6 @@ a{
     transform: translate(0);
   }
 }
-/* .about-me-photo{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  bottom: 20%;
-} */
 
 @keyframes fade-down{
   0%{
@@ -320,7 +324,8 @@ a{
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin: 20% 1rem 1rem 1rem;
+  margin: 20% 1rem 20rem 1rem;
+  height: 100%;
   color: #353535;
 }
 
@@ -355,7 +360,6 @@ a{
   height: 40rem;
   display: relative;
   z-index: 1;
-  /* margin: 2rem; */
 }
 
 .piece{
@@ -370,7 +374,6 @@ a{
 .piece:nth-of-type(1){
   position: relative;
   z-index: 3;
-  /* left: 10%; */
   background-color: #EEEEEE;
   animation: move-in-from-right 5s 0.5s ease-out;
   animation-fill-mode: backwards;
@@ -463,6 +466,7 @@ a{
 .portfolio-card__title{
   color: #EEEEEE;
   font-size: 2rem;
+  letter-spacing: 0.3rem;
   text-align: center;
   background-color: #353535;
   padding: 0 1rem;
@@ -496,6 +500,7 @@ a{
 .tools-title{
   margin: 1rem;
   font-size: 2rem;
+  letter-spacing: 0.2rem;
   text-align: center;
 }
 
@@ -516,6 +521,7 @@ a{
   padding: 0.5rem 1rem;
   text-align: center;
   font-weight: 700;
+  letter-spacing: 0.2rem;
   background-color: rgba(52, 89, 253, 0.4);
   border-radius: 1rem;
   flex-grow: 1;
@@ -585,25 +591,30 @@ a{
 }
 
 /* FOOTER */
+
 .footer{
-  background: linear-gradient(0deg, rgba(21,0,255,1) 0%, rgba(125,63,175,1) 34%, rgba(203,93,47,1) 77%, rgba(224,101,13,1) 87%, rgba(255,15,209,1) 100%);
+  background: linear-gradient(321deg, rgba(21,0,255,1) 0%, rgba(125,63,175,1) 32%, rgba(224,101,13,1) 96%);
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   height: 20rem;
   width: 100%;
   margin-top: 5rem;
-  padding: 2rem;
-  /* margin-bottom: -20rem; */
+  padding: 4rem;
 }
 
 .footer__deets{
-  font-size: 3rem;
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* height: 25%; */
   justify-content: space-evenly;
+}
+
+.little{
+  font-size: 1.5rem;
+  letter-spacing: normal;
 }
 
 /* .footer__note, .footer__date{
@@ -619,5 +630,24 @@ a{
 .social__icon{
   width: 6rem;
   height: 6rem;
-  margin: 2rem;
+  margin: 0 2rem;
+}
+
+.social__icon:hover{
+  box-shadow: #EEEEEE 0 0 2rem;
+}
+
+.linkedin__icon:hover{
+  fill: #2867B2;
+  cursor: pointer;
+}
+
+.github__icon:hover{
+  fill: #6e5494;
+  cursor: pointer;
+}
+
+.twitter__icon:hover{
+  fill: #1da1f2;
+  cursor: pointer;
 }
