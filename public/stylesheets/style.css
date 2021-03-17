@@ -226,14 +226,13 @@ a{
 /* ABOUT PAGE */
 
 .about{
-  /* margin: 4rem 0 0 3rem; */
   padding: 10rem 0.5rem 0 6rem;
-  margin-bottom: 20rem;
+  margin: 7rem 0 10rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  width: 50%;
+  width: 75%;
   animation-name: fade-down;
   animation-duration: 4s;
   animation-timing-function: ease-in-out;
@@ -255,7 +254,8 @@ a{
   font-size: 1.8rem;
   font-weight: 400;
   text-align: justify;
-  line-height: 4rem;
+  line-height: 3.5rem;
+  letter-spacing: 0.2rem;
   color: #353535;
   animation-name: fade-right;
   animation-delay: 3.2s;
@@ -264,18 +264,25 @@ a{
   animation-fill-mode: backwards;
 }
 
-.image-wrapper{
-  width: 300px;
-  height: 300px;
-  border-radius: 150px;
-  overflow: hidden;
-  background: url('../images/bean_and_I.jpg');
+.summary__intro, .summary__body{
+  margin-bottom: 2rem;
+}
+
+.me-image{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  float: left;
+  shape-outside: circle(50%);
+  margin-right: 2rem;
+  overflow: hidden; 
+  background: url('../images/me.jpg');
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
-  position: absolute;
-  bottom: 35%;
-  right: 25%;
+  /* position: absolute;
+  bottom: 30%;
+  right: 10%; */
   animation: fade-in 3s 3s ease-out;
   animation-fill-mode: backwards;
 }
@@ -324,7 +331,7 @@ a{
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin: 20% 1rem 20rem 1rem;
+  margin: 15% 1rem 20rem 1rem;
   height: 100%;
   color: #353535;
 }
@@ -352,6 +359,34 @@ a{
   100%{
     opacity: 1;
   }
+}
+
+.portfolio__sub-title{
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80%;
+  font-size: 3rem;
+  font-weight: 500;
+  padding-bottom: 3rem;
+  animation: fade-in 2s 4s ease-in-out; 
+  animation-fill-mode: backwards;
+}
+
+.portfolio__sub-link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 80%;
+  font-size: 2rem;
+  transition: all 5s ease-in-out;
+  animation: fade-in 2s 4.5s ease-in-out; 
+  animation-fill-mode: backwards;
+}
+
+.portfolio__sub-link:hover{
+  color: #6e5494;
+  font-size: 2.5rem;
 }
 
 .portfolio__list{
