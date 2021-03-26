@@ -6,22 +6,20 @@
   --headline-font-stack: Pacifico, 'Playfair Display', 'Krona One', 'Merriweather Sans', serif;
 }
 
-html {
-  font-size: 10px;
-}
-
 *,
-*:before,
-*:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-body {
-  box-sizing: border-box;
-  background-color: var(--color-background);
-  font-family: 'Poppins';
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  /* background-color: var(--color-background);
+  font-family: 'Poppins'; */
 }
 
 a{
@@ -96,7 +94,7 @@ a{
 
 /* NAVBAR */
 
-.navbar__toggle{
+/* .navbar__toggle{
   display: flex;
   justify-content: flex-end;
 }
@@ -215,7 +213,7 @@ a{
   100%{
     opacity: 1;
   }
-}
+} */
 
 /* ABOUT PAGE */
 
@@ -320,7 +318,7 @@ a{
 
 /* PORTFOLIO PAGE */
 
-.portfolio{
+/* .portfolio{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -406,7 +404,7 @@ a{
   background-color: #EEEEEE;
   animation: move-in-from-right 5s 0.5s ease-out;
   animation-fill-mode: backwards;
-}
+} 
 
 @keyframes move-in-from-right{
   0%{
@@ -470,7 +468,7 @@ a{
 
 /* PORTFOLIO CARD */
 
-.portfolio-card{
+/* .portfolio-card{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -569,9 +567,9 @@ a{
   z-index: -1;
   transform: scale(0);
   /* display: none; */
-}
+/*}
 
-.body__description{
+ .body__description{
   text-shadow: #aaaaaa -.1rem .1rem .2rem;
 }
 
@@ -617,11 +615,11 @@ a{
   100%{
     transform: translateX(6rem);
   }
-}
+} */
 
 /* FOOTER */
 
-.footer{
+/* .footer{
   background: linear-gradient(321deg, rgba(21,0,255,1) 0%, rgba(125,63,175,1) 32%, rgba(224,101,13,1) 96%);
   display: flex;
   align-items: flex-start;
@@ -650,7 +648,7 @@ a{
   display: block;
 } */
 
-.footer__socials{
+/*.footer__socials{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -679,4 +677,4 @@ a{
 .twitter__icon:hover{
   fill: #1da1f2;
   cursor: pointer;
-}
+} */
