@@ -1,13 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap');
 
 :root {
-  --princeton-orange: #EA7317;
-  --green-blue: #2364AA;
-  --carolina-blue: #3DA5D9;
-  --green-sheen: #73BFB8;
-  --mikado-yellow: #FEC601;
-  --black: #272727;
-  --box-size: 250px;
+  --color-background: #EEE;
   --sans-font-stack: Rubik, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
   --headline-font-stack: Pacifico, 'Playfair Display', 'Krona One', 'Merriweather Sans', serif;
 }
@@ -26,7 +20,7 @@ html {
 
 body {
   box-sizing: border-box;
-  background-color: #EEEEEE;
+  background-color: var(--color-background);
   font-family: 'Poppins';
 }
 
