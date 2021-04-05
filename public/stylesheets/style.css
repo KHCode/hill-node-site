@@ -2,13 +2,14 @@
 
 :root {
   --color-background: #EEE;
-  --sans-font-stack: Rubik, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-  --headline-font-stack: Pacifico, 'Playfair Display', 'Krona One', 'Merriweather Sans', serif;
+  --font-color-primary: #353535;
+  --font-primary: Poppins;
 }
 
 *,
 *::before,
 *::after {
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -17,13 +18,12 @@ h1,
 h2,
 h3,
 p {
-  margin: 0;
-  /* background-color: var(--color-background);
-  font-family: 'Poppins'; */
+  background-color: var(--color-background);
+  font-family: var(--font-primary);
 }
 
 a{
-  color: #353535;
+  color: var(--font-color-primary);
   text-decoration: none;
 }
 
@@ -97,35 +97,24 @@ a{
 /* .navbar__toggle{
   display: flex;
   justify-content: flex-end;
-}
+} */
 
 .navbar{
-  padding: 0 2rem;
-  font-size: 5rem;
+  padding: 4rem 2rem 3rem 2rem;
+  font-size: 3rem;
   color: #353535;
-  display: flex;
-  justify-content: flex-end;
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 2;
-}
-
-.navbar__hamburger{
-  display: none;
+  /* display: flex;
+  justify-content: center; */
 }
 
 .navbar__list{
   list-style: none;
-  margin-right: 3rem;
-  text-align: end;
+  display: flex;
+  justify-content: space-evenly;
+  padding-inline-start: 0px;
 }
 
 .navbar__about{
-  animation-name: fade-in;
-  animation-duration: 3s;
-  animation-delay: 1s;
-  animation-fill-mode: backwards;
   transition: letter-spacing 2s;
 }
 
@@ -135,10 +124,6 @@ a{
 }
 
 .navbar__portfolio{
-  animation-name: fade-in;
-  animation-duration: 3s;
-  animation-delay: 1.5s;
-  animation-fill-mode: backwards;
   transition: letter-spacing 2s;
 } 
 
@@ -148,10 +133,6 @@ a{
 }
 
 .navbar__blog{
-  animation-name: fade-in;
-  animation-duration: 3s;
-  animation-delay: 2s;
-  animation-fill-mode: backwards;
   transition: letter-spacing 2s;
 }
 
@@ -159,61 +140,6 @@ a{
   font-weight: 700;
   letter-spacing: .7rem;
 }
-
-.vertical-bar__short{
-  height: 13rem;
-  width: 0.7rem;
-  background: #353535;
-  margin-right: 2rem;
-  animation-name: descend;
-  animation-duration: 2s;
-  animation-timing-function: ease-out;
-}
-
-.vertical-bar__long{
-  height: 21rem;
-  width: 0.7rem;
-  background: #353535;
-  margin-right: 2rem;
-  animation-name: descend2;
-  animation-duration: 2.5s;
-  animation-delay: .5s;
-  animation-fill-mode: backwards;
-  animation-timing-function: ease-out;
-}
-
-@keyframes descend{
-  0%{
-    height: 0;
-    opacity: 0;
-  }
-  100%{
-    height: 13rem;
-    opacity: 1;
-  }
-}
-
-@keyframes descend2{
-  0%{
-    height: 0;
-    opacity: 0;
-  }
-  
-  100%{
-    height: 21rem;
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in{
-  0%{
-    opacity: 0;
-  }
-  
-  100%{
-    opacity: 1;
-  }
-} */
 
 /* ABOUT PAGE */
 
@@ -318,29 +244,23 @@ a{
 
 /* PORTFOLIO PAGE */
 
-/* .portfolio{
+.portfolio{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  margin: 15% 1rem 20rem 1rem;
-  height: 100%;
+  justify-content: center;
   color: #353535;
 }
 
 .portfolio__title{
-  font-size: 10rem;
+  font-size: 3rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 3rem;
   text-align: center;
-  line-height: 13rem;
-  margin: 0 3rem 0 3rem;
-  position: absolute;
-  top: 3rem;
-  left: 4rem;
-  animation: fade-in 5s 1s ease-in-out; 
-  animation-fill-mode: backwards;
+  letter-spacing: 1rem;
+  padding-left: 1rem;
+  margin-bottom: 4rem;
+  border-bottom: solid var(--font-color-primary) 0.5rem;
 }
 
 @keyframes fade-in{
@@ -351,18 +271,6 @@ a{
   100%{
     opacity: 1;
   }
-}
-
-.portfolio__sub-title{
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 80%;
-  font-size: 3rem;
-  font-weight: 500;
-  padding-bottom: 3rem;
-  animation: fade-in 2s 4s ease-in-out; 
-  animation-fill-mode: backwards;
 }
 
 .portfolio__sub-link{
@@ -383,102 +291,18 @@ a{
 
 .portfolio__list{
   list-style: none;
-  width: 110rem;
-  height: 40rem;
-  display: relative;
-  z-index: 1;
+  padding-inline-start: 0px;
 }
 
-.piece{
-  flex-basis: 45%;
-  height: 36rem;
-  width: 44rem;
-  margin: 0.5rem;
-  border: solid #353535 2rem;
-  box-shadow:rgba(238, 238, 238, 0.4) 0 0 3rem;
-}
-
-.piece:nth-of-type(1){
-  position: relative;
-  z-index: 3;
-  background-color: #EEEEEE;
-  animation: move-in-from-right 5s 0.5s ease-out;
-  animation-fill-mode: backwards;
-} 
-
-@keyframes move-in-from-right{
-  0%{
-    opacity: 0;
-    transform: translateX(110rem);
-  }
-  
-  100%{
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-.piece:nth-of-type(2){
-  position: relative;
-  z-index: 2;
-  top: -90%;
-  left: 60%;
-  background-color: #EEEEEE;
-  animation: move-in-from-left 5s 0.7s ease-out;
-  animation-fill-mode: backwards;
-}
-
-@keyframes move-in-from-left{
-  0%{
-    opacity: 0;
-    transform: translateX(-110rem);
-  }
-  
-  100%{
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-.piece:nth-of-type(3){
-  position: relative;
-  z-index: 1;
-  top: -170%;
-  left: 30%;
-  background-color: #EEEEEE;
-  animation: move-in-from-above 5s 0.3s ease-out;
-  animation-fill-mode: backwards;
-}
-
-@keyframes move-in-from-above{
-  0%{
-    opacity: 0;
-    transform: translateY(-80rem);
-  }
-  
-  100%{
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-.piece:hover{
-  z-index: 998;
-}
 
 /* PORTFOLIO CARD */
 
-/* .portfolio-card{
+.portfolio-card{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  z-index: 1;
-  animation: fade-in 2s 4s ease-in;
-  animation-fill-mode: backwards;
+  padding-bottom: 2rem;
 }
 
 .portfolio-card__header{
@@ -487,7 +311,7 @@ a{
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-bottom: 1rem;
+  padding: 1rem;
 }
 
 .portfolio-card__title{
@@ -505,7 +329,7 @@ a{
   width: 100%;
 }
 
-.github-logo, .more-info{
+.github-logo{
   width: 10rem;
   height: 8.5rem;
   fill: #353535;
@@ -522,6 +346,7 @@ a{
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .tools-title{
@@ -538,7 +363,7 @@ a{
   align-items: center;
   list-style: none;
   font-size: 1.7rem;
-  width: 100%;
+  width: 70%;
   height: 100%;
   padding: 1rem 2rem;
 }
@@ -555,67 +380,13 @@ a{
 }
 
 .portfolio-card__body{
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #353535;
-  line-height: 3rem;
+  line-height: 2rem;
   text-align: justify;
   padding: 3rem 3rem;
-  width: 100%;
-  height: 100%;
-  transition: all 1s ease-in-out;
-  position: absolute;
-  z-index: -1;
-  transform: scale(0);
-  /* display: none; */
-/*}
-
- .body__description{
-  text-shadow: #aaaaaa -.1rem .1rem .2rem;
+  width: 70%;
 }
-
-.body__close{
-  position: absolute;
-  fill: #353535;
-  bottom: 2rem;
-  right: 3rem;
-}
-
-.reveal{
-  background-color: rgba(238, 238, 238, .97);
-  z-index: 999;
-  transform: scale(1);
-  display: inline-block;
-}
-
-@keyframes fade-zoom-in{
-  0%{
-    opacity: 0;
-    transform: scale(0);
-  }
-  
-  80%{
-    transform: scale(1.1);
-  }
-  
-  90%{
-    transform: scale(0.9);
-  }
-  
-  100%{
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes slide-right{
-  0%{
-    transform: translate(0);
-  }
-  
-  100%{
-    transform: translateX(6rem);
-  }
-} */
 
 /* FOOTER */
 
