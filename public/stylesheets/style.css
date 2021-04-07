@@ -144,42 +144,30 @@ a{
 /* ABOUT PAGE */
 
 .about{
-  padding: 10rem 0.5rem 0 6rem;
-  margin: 7rem 0 10rem 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  width: 75%;
-  animation-name: fade-down;
-  animation-duration: 4s;
-  animation-timing-function: ease-in-out;
+  justify-content: center;
+  margin: 10rem;
 }
 
 .about__title{
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-  font-size: 10rem;
+  font-size: 3rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #353535;
-  letter-spacing: -3rem;
+  text-align: center;
+  letter-spacing: 1rem;
+  padding-left: 1rem;
+  margin-bottom: 4rem;
+  border-bottom: solid var(--font-color-primary) 0.5rem;
 }
 
 .about__summary{
-  width: 100%;
-  padding-left: 4rem;
   font-size: 1.8rem;
   font-weight: 400;
-  text-align: justify;
-  line-height: 3.5rem;
+  /* text-align: justify; */
+  line-height: 2.5rem;
   letter-spacing: 0.2rem;
-  color: #353535;
-  animation-name: fade-right;
-  animation-delay: 3.2s;
-  animation-duration: 3s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: backwards;
 }
 
 .summary__intro, .summary__body{
@@ -192,17 +180,13 @@ a{
   border-radius: 100px;
   float: left;
   shape-outside: circle(50%);
-  margin-right: 2rem;
+  margin-right: 2.5rem;
+  margin-bottom: 1.5rem;
   overflow: hidden; 
   background: url('../images/me.jpg');
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
-  /* position: absolute;
-  bottom: 30%;
-  right: 10%; */
-  animation: fade-in 3s 3s ease-out;
-  animation-fill-mode: backwards;
 }
 
 @keyframes fade-in{
@@ -303,6 +287,7 @@ a{
   align-items: center;
   justify-content: space-between;
   padding-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .portfolio-card__header{
@@ -310,7 +295,7 @@ a{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 80%;
   padding: 1rem;
 }
 
