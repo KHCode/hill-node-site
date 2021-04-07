@@ -94,52 +94,54 @@ a{
 
 /* NAVBAR */
 
-/* .navbar__toggle{
-  display: flex;
-  justify-content: flex-end;
-} */
-
 .navbar{
-  padding: 4rem 2rem 3rem 2rem;
-  font-size: 3rem;
+  /* padding: 4rem 8rem; */
+  font-size: 2.5rem;
   color: #353535;
-  /* display: flex;
-  justify-content: center; */
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar__list-wrapper{
+  width: 25rem;
 }
 
 .navbar__list{
   list-style: none;
   display: flex;
-  justify-content: space-evenly;
-  padding-inline-start: 0px;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5rem;
+  padding-inline-start: 0;
 }
 
-.navbar__about{
-  transition: letter-spacing 2s;
+.navbar__home{
+  flex-basis: 10rem;
 }
 
-.navbar__about:hover{
-  font-weight: 700;
-  letter-spacing: .7rem;
+.navbar__home > a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.navbar__portfolio{
-  transition: letter-spacing 2s;
-} 
-
-.navbar__portfolio:hover{
-  font-weight: 700;
-  letter-spacing: .7rem;
+.home-img{
+  width: 50px;
+  height: 50px;
+  display: inline-block;
 }
 
-.navbar__blog{
-  transition: letter-spacing 2s;
+.home-name{
+  font-size: 1.5rem;
+  padding-left: 1rem;
+  display: inline-block;
 }
 
-.navbar__blog:hover{
-  font-weight: 700;
-  letter-spacing: .7rem;
-}
+/* .navbar__about, .navbar__portfolio, .navbar__blog{
+  padding-left: 2rem;
+} */
 
 /* ABOUT PAGE */
 
@@ -148,7 +150,7 @@ a{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 10rem;
+  margin: 7rem 10rem;
 }
 
 .about__title{
@@ -234,6 +236,7 @@ a{
   align-items: center;
   justify-content: center;
   color: #353535;
+  margin: 7rem;
 }
 
 .portfolio__title{
@@ -295,8 +298,8 @@ a{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
   padding: 1rem;
+  width: 100%;
 }
 
 .portfolio-card__title{
@@ -348,7 +351,7 @@ a{
   align-items: center;
   list-style: none;
   font-size: 1.7rem;
-  width: 70%;
+  width: 100%;
   height: 100%;
   padding: 1rem 2rem;
 }
@@ -369,8 +372,12 @@ a{
   color: #353535;
   line-height: 2rem;
   text-align: justify;
-  padding: 3rem 3rem;
-  width: 70%;
+  padding: 3rem;
+  width: 100%;
+}
+
+.body__description{
+  margin-top: 1rem;
 }
 
 /* FOOTER */
