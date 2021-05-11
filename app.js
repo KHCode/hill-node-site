@@ -3,23 +3,18 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-
-
-
-// var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/users');
+const axios = require('axios');
+const exhbs = require('express-handlebars');
 
 var app = express();
-
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
 
 /* GET home page. */
 app.get('/', (req, res, next) => {
@@ -27,6 +22,8 @@ app.get('/', (req, res, next) => {
 });
 
 app.get('/portfolio', (req, res) => {
+  axios.get('https://gitconnected.com/v1/portfolio/khcode')
+    .then(response => console.log(response));
   res.sendFile('./public/portfolio.html', {root: __dirname});
 });
 
