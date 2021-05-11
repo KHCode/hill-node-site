@@ -24,7 +24,7 @@ app.get('/', (req, res, next) => {
   res.sendFile('./public/home.html', {root: __dirname});
 });
 
-app.get('/portfolio', (req, res) => {
+app.get('/portfolio', (req, res, next) => {
   app.locals.projects = [];
   axios.get('https://gitconnected.com/v1/portfolio/khcode')
     .then(response => {
@@ -37,7 +37,10 @@ app.get('/portfolio', (req, res) => {
       // })
 
       // console.log(thisCache.keys())
+      next()
     });
+}, (req, res) => {
+  
   // res.sendFile('./public/portfolio.html', {root: __dirname});
   //TODO: Capitalize and replace dashes w/ spaces in app.locals.projects[i].displayName
   console.log(req.app.locals.projects)
