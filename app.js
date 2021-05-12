@@ -3,33 +3,46 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-
-
-
-// var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/users');
-
+const axios = require('axios');
+const exphbs = require('express-handlebars');
+const nodeCache = require('node-cache');
+// const thisCache = new nodeCache();
+const convert = require('./utils/displayNameConverter');
 var app = express();
-
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
 
-/* GET home page. */
+
+/* GET Home page. */
 app.get('/', (req, res, next) => {
   res.sendFile('./public/home.html', {root: __dirname});
 });
 
-app.get('/portfolio', (req, res) => {
-  res.sendFile('./public/portfolio.html', {root: __dirname});
+/* GET Projects page. */
+app.get('/portfolio', (req, res, next) => {
+  app.locals.projects = [];
+  axios.get('https://gitconnected.com/v1/portfolio/khcode')
+    .then(response => {
+      response.data.projects.forEach( el => {
+        console.log(el.displayName)
+        const fixed = convert.displayNameConverter(el.displayName);
+        el.displayName = fixed;
+        console.log(el.displayName)
+      });
+      app.locals.projects.push(...(response.data.projects))
+      next()
+    });
+}, (req, res) => {
+  res.render('portfolio', {projects: req.app.locals.projects});
 });
 
+/* GET About page. */
 app.get('/about', (req, res) => {
   res.sendFile('./public/about.html', {root: __dirname});
 });
