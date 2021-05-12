@@ -6,8 +6,8 @@ const logger = require('morgan');
 const axios = require('axios');
 const exphbs = require('express-handlebars');
 const nodeCache = require('node-cache');
-const thisCache = new nodeCache();
-
+// const thisCache = new nodeCache();
+const convert = require('./utils/displayNameConverter');
 var app = express();
 
 app.use(logger('dev'));
@@ -19,34 +19,30 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 
-/* GET home page. */
+/* GET Home page. */
 app.get('/', (req, res, next) => {
   res.sendFile('./public/home.html', {root: __dirname});
 });
 
+/* GET Projects page. */
 app.get('/portfolio', (req, res, next) => {
   app.locals.projects = [];
   axios.get('https://gitconnected.com/v1/portfolio/khcode')
     .then(response => {
-      // console.log(response.data)
+      response.data.projects.forEach( el => {
+        console.log(el.displayName)
+        const fixed = convert.displayNameConverter(el.displayName);
+        el.displayName = fixed;
+        console.log(el.displayName)
+      });
       app.locals.projects.push(...(response.data.projects))
-      console.log(app.locals.projects)
-      // thisCache.mset(...(response.data.projects))
-      // response.data.projects.forEach((el, idx) => {
-      //   thisCache.mset({key: `project${idx}`, val: {...el}})
-      // })
-
-      // console.log(thisCache.keys())
       next()
     });
 }, (req, res) => {
-  
-  // res.sendFile('./public/portfolio.html', {root: __dirname});
-  //TODO: Capitalize and replace dashes w/ spaces in app.locals.projects[i].displayName
-  console.log(req.app.locals.projects)
   res.render('portfolio', {projects: req.app.locals.projects});
 });
 
+/* GET About page. */
 app.get('/about', (req, res) => {
   res.sendFile('./public/about.html', {root: __dirname});
 });
